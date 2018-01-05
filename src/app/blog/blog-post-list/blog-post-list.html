@@ -1,0 +1,8 @@
+<mat-card class="post-list-item" *ngFor="let post of blogPosts" (click)="onPostSelected(post.id)">
+    <div class="title-and-author">
+        <p class="h2">{{post.title}}</p>
+        <p>By: <span class="small">{{post.author}}</span></p>
+        <p>Date Published: <span class="small">{{post.publish_date}}</span></p>
+    </div>
+    <p>{{post.description}}</p>
+</mat-card>

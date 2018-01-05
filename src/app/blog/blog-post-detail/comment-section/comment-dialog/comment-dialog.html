@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>New Comment</h2>
+<mat-dialog-content>
+    <form>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="message" name="message" [(ngModel)]="message">
+            </mat-form-field>
+        </form>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="onReturnMessage()">Send</button>
+    <button mat-button [mat-dialog-close]="false">Cancel</button>
+</mat-dialog-actions>

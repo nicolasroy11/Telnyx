@@ -1,0 +1,15 @@
+<mat-card class="blog-post">
+    <div class="title-and-author" (click)="onPostSelected(post.id)">
+        <p class="h2">{{post?.title}}</p>
+        <p>By:
+            <span class="small">{{post?.author}}</span>
+        </p>
+        <p>Date Published:
+            <span class="small">{{post?.publish_date}}</span>
+        </p>
+    </div>
+    <div [innerHTML]="post?.content"></div>
+    <button (click)="onClickedReply()" mat-button>Reply</button>
+</mat-card>
+
+<comment-section *ngIf="post" [postId]="post.id" #commentSection></comment-section>

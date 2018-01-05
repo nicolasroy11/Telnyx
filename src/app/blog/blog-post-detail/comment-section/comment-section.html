@@ -1,0 +1,11 @@
+<tree-root [nodes]="nodes" [options]="options" (initialized)="onTreeLoad()" #Tree>
+    <ng-template #treeNodeTemplate let-node let-index="index">
+        <mat-card style="min-width:500px;">
+            <span>
+                <h4>{{ node.data.commentModel.user }}</h4><p class="small">on: {{ node.data.commentModel.date }}</p>
+            </span>
+            <div>{{node.data.commentModel.content}}</div>
+            <button (click)="onClickedReply(node.id)" mat-button>Reply</button>
+        </mat-card>
+    </ng-template>
+</tree-root>
