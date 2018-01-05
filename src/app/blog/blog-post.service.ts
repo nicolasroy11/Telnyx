@@ -17,7 +17,6 @@ export class BlogPostService {
     }
 
     public getById(id: number): Observable<IBlogPost> {
-        const postsObservable = <Observable<IBlogPost[]>>this._http.get(`${this._baseUrl}/posts`);
-        return postsObservable.map(posts => posts.filter(post => post.id === id)[0]);
+        return <Observable<IBlogPost>>this._http.get(`${this._baseUrl}/posts/${id}`);
     }
 }
